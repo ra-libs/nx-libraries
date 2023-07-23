@@ -1,6 +1,6 @@
 import React from 'react'
+import { DateField as RaDateField,DateFieldProps, Labeled } from 'react-admin'
 
-import { DateFieldProps, Labeled, DateField as RaDateField } from 'react-admin'
 import { LabeledFieldProps } from '../../../config'
 
 type TimeFieldProps = DateFieldProps

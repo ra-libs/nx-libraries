@@ -1,5 +1,6 @@
 import React from 'react'
 import { Labeled, TextField as RaTextField, TextFieldProps } from 'react-admin'
+
 import { LabeledFieldProps } from '../../../config'
 
 export function TextField(props: LabeledFieldProps<TextFieldProps>) {

@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { DatagridProps, Datagrid as RaDatagrid } from 'react-admin'
+import { Datagrid as RaDatagrid,DatagridProps } from 'react-admin'
 
 export function Datagrid(props: DatagridProps) {
   const { children, bulkActionButtons, ...rest } = props

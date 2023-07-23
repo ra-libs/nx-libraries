@@ -1,5 +1,6 @@
 import React from 'react'
 import { SelectInput, SelectInputProps } from 'react-admin'
+
 import { useCountries } from '../../../hooks/countries'
 
 type CountryInputProps = SelectInputProps

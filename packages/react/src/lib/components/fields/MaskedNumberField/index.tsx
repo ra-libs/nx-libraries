@@ -1,7 +1,7 @@
 import React from 'react'
-import { TextInputProps, Labeled, useRecordContext, useResourceContext, useTranslate } from 'react-admin'
-
+import { Labeled, TextInputProps, useRecordContext, useResourceContext, useTranslate } from 'react-admin'
 import { InputAttributes, NumericFormat, NumericFormatProps } from 'react-number-format'
+
 import { LabeledFieldProps } from '../../../config'
 import { MAPPED_CURRENCIES } from '../../../config/common'
 interface MaskedNumberFieldProps extends TextInputProps {

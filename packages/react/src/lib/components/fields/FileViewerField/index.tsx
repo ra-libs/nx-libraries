@@ -1,6 +1,6 @@
-import React from 'react'
-
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid } from '@mui/material'
+import { Image } from 'mui-image'
+import React from 'react'
 import {
   FileField,
   FileFieldProps,
@@ -10,7 +10,6 @@ import {
   useResourceContext,
   useTranslate,
 } from 'react-admin'
-import { Image } from 'mui-image'
 
 interface FileViewerFieldProps extends FileFieldProps {
   typeSource?: string

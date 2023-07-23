@@ -1,8 +1,7 @@
 import React from 'react'
-
 import { DatagridProps, SimpleList, SimpleListProps } from 'react-admin'
-import { useScreenSize } from '../../hooks/style'
 
+import { useScreenSize } from '../../hooks/style'
 import { Datagrid } from '../Datagrid'
 
 type ResponsiveDatagridProps = SimpleListProps & DatagridProps

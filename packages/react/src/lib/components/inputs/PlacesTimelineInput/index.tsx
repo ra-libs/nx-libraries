@@ -1,15 +1,5 @@
-import React, { useEffect } from 'react'
-import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
-import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
+import DeleteIcon from '@mui/icons-material/Delete'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
-import parse from 'autosuggest-highlight/parse'
-import { throttle } from 'lodash'
-import { useFormContext } from 'react-hook-form'
-
-import { TextInputProps, useInput, useResourceContext, useTranslate } from 'react-admin'
 import {
   Timeline,
   TimelineConnector,
@@ -20,8 +10,17 @@ import {
   TimelineSeparator,
 } from '@mui/lab'
 import { IconButton } from '@mui/material'
+import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
+import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
+import parse from 'autosuggest-highlight/parse'
+import { throttle } from 'lodash'
+import React, { useEffect } from 'react'
+import { TextInputProps, useInput, useResourceContext, useTranslate } from 'react-admin'
+import { useFormContext } from 'react-hook-form'
 
-import DeleteIcon from '@mui/icons-material/Delete'
 import { HttpRequest } from '../../../services'
 
 interface PlacesTimelineInputProps extends TextInputProps {

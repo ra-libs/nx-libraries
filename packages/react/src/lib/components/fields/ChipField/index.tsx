@@ -1,6 +1,5 @@
-import React from 'react'
-
 import { Chip, Typography } from '@mui/material'
+import React from 'react'
 import { ChipFieldProps, useRecordContext, useResourceDefinition, useTranslate } from 'react-admin'
 
 export function ChipField(props: ChipFieldProps) {

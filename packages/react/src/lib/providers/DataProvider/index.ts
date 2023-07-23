@@ -1,10 +1,13 @@
+import simpleRestProvider from 'ra-data-simple-rest';
 import {
   CreateParams,
   CreateResult,
+  DataProvider as RaDataProvider,
   DeleteManyParams,
   DeleteManyResult,
   DeleteParams,
   DeleteResult,
+  fetchUtils,
   GetListParams,
   GetListResult,
   GetManyParams,
@@ -13,15 +16,12 @@ import {
   GetManyResult,
   GetOneParams,
   GetOneResult,
-  DataProvider as RaDataProvider,
   RaRecord,
   UpdateManyParams,
   UpdateManyResult,
   UpdateParams,
   UpdateResult,
-  fetchUtils,
 } from 'react-admin';
-import simpleRestProvider from 'ra-data-simple-rest';
 
 export class DataProvider implements RaDataProvider {
   private provider: RaDataProvider;

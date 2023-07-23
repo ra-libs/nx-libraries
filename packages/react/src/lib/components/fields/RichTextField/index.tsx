@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { Labeled, RichTextField as RaRichTextField, RichTextFieldProps } from 'react-admin'
+
 import { LabeledFieldProps } from '../../../config'
 
 export function RichTextField(props: LabeledFieldProps<RichTextFieldProps>) {

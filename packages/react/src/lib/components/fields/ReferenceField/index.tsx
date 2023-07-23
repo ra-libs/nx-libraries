@@ -1,5 +1,6 @@
 import React from 'react'
 import { Labeled, ReferenceField as RaReferenceField, ReferenceFieldProps } from 'react-admin'
+
 import { LabeledFieldProps } from '../../../config'
 
 export function ReferenceField(props: LabeledFieldProps<ReferenceFieldProps>) {

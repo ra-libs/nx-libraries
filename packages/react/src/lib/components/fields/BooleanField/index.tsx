@@ -1,5 +1,6 @@
 import React from 'react'
-import { Labeled, BooleanField as RaBooleanField, BooleanFieldProps } from 'react-admin'
+import { BooleanField as RaBooleanField, BooleanFieldProps,Labeled } from 'react-admin'
+
 import { LabeledFieldProps } from '../../../config'
 
 export function BooleanField(props: LabeledFieldProps<BooleanFieldProps>) {

@@ -1,6 +1,6 @@
 import countries from 'i18n-iso-countries';
-import ptCountries from 'i18n-iso-countries/langs/pt.json';
 import enCountries from 'i18n-iso-countries/langs/en.json';
+import ptCountries from 'i18n-iso-countries/langs/pt.json';
 import { useLocaleState } from 'react-admin';
 
 countries.registerLocale(enCountries);

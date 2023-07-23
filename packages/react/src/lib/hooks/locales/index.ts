@@ -1,5 +1,5 @@
-import { useLocaleState } from 'react-admin'
 import ptBrLocale from 'date-fns/locale/pt-BR'
+import { useLocaleState } from 'react-admin'
 
 const localeMap: any = {
   'pt-br': ptBrLocale,

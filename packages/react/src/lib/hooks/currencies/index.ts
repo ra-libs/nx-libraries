@@ -1,4 +1,5 @@
 import { useLocaleState } from 'react-admin'
+
 import { CURRENCIES, CURRENCIES_PT_BR } from '../../config/common'
 
 const CURRENCIES_LOCALE_MAP: any = {

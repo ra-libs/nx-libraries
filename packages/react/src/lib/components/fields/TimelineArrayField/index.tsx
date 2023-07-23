@@ -8,8 +8,8 @@ import {
   TimelineSeparator,
 } from '@mui/lab'
 import React from 'react'
-
 import { Labeled, useRecordContext, useResourceContext, useTranslate } from 'react-admin'
+
 import { LabeledFieldProps } from '../../../config'
 
 interface TimelineArrayFieldProps {

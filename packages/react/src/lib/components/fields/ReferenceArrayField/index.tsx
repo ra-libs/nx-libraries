@@ -1,11 +1,11 @@
 import React from 'react'
-
 import {
   Labeled,
   ReferenceArrayField as RaReferenceArrayField,
   ReferenceArrayFieldProps as RnReferenceArrayFieldProps,
   SingleFieldList,
 } from 'react-admin'
+
 import { LabeledFieldProps } from '../../../config'
 import { ChipField } from '../ChipField'
 

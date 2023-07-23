@@ -1,11 +1,11 @@
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { parseISO } from 'date-fns'
 import React from 'react'
 import { DateInputProps, useInput, useResourceContext, useTranslate } from 'react-admin'
-
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { useFormContext } from 'react-hook-form'
-import { parseISO } from 'date-fns'
+
 import { useDateLocale } from '../../../hooks'
 
 export function DateInput(props: DateInputProps) {
