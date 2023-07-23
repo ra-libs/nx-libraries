@@ -1,0 +1,3 @@
+{
+  "jest.jestCommandLine": "npx nx affected -t test"
+}
