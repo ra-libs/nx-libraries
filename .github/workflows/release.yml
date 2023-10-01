@@ -1,0 +1,33 @@
+name: CI Release
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  HUSKY: 0
+
+jobs:
+  semantic-release:
+    if: "!contains(github.event.head_commit.message, 'chore')"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+      packages: write # to be able to publish to GitHub Packages
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: npm ci
+      - run: npx nx affected -t build --parallel=3
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npx nx run-many --targets=build,semantic-release --parallel=false
