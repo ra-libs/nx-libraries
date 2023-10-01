@@ -11,3 +11,8 @@ lint:
 
 yalc-publish:
 	cd dist/packages/react && yalc publish
+
+update:
+	nx migrate latest
+	nx migrate --run-migrations
+	rm migrations.json
