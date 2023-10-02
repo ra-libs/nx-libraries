@@ -18,6 +18,7 @@
     "@nx/react": "16.9.1",
     "@nx/vite": "16.9.1",
     "@nx/workspace": "16.9.1",
+    "@semantic-release/npm": "^11.0.0",
     "@testing-library/react": "14.0.0",
     "@theunderscorer/nx-semantic-release": "^2.6.2",
     "@types/autosuggest-highlight": "^3.2.0",
