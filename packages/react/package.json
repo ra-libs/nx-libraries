@@ -1,6 +1,6 @@
 {
   "name": "@ra-libs/react",
-  "version": "1.8.26",
+  "version": "1.8.27",
   "main": "./index.js",
   "types": "./index.d.ts",
   "private": false,

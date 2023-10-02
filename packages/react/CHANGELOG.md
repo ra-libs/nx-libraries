@@ -1,3 +1,10 @@
+## [1.8.27](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.26...react-v1.8.27) (2023-10-02)
+
+
+### Bug Fixes
+
+* cp readme ([a847785](https://github.com/ra-libs/nx-libraries/commit/a8477859e2b0c027bf425e804fe9019f156bb61d))
+
 ## [1.8.26](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.25...react-v1.8.26) (2023-10-02)
 
 
