@@ -1,14 +1,21 @@
-import React from 'react'
-import { SelectInput, SelectInputProps } from 'react-admin'
+import React from 'react';
+import { SelectInput, SelectInputProps } from 'react-admin';
 
-import { useCurrencies } from '../../../hooks/currencies'
+import { useCurrencies } from '../../../hooks/currencies';
 
-type CurrencyInputProps = SelectInputProps
+type CurrencyInputProps = SelectInputProps;
 
 export function CurrencyInput(props: CurrencyInputProps) {
-  const { source = 'currency', defaultValue, ...rest } = props
+  const { source = 'currency', defaultValue, ...rest } = props;
 
-  const currencies = useCurrencies()
+  const currencies = useCurrencies();
 
-  return <SelectInput source={source} choices={currencies} defaultValue={defaultValue || 'BRL'} {...rest} />
+  return (
+    <SelectInput
+      source={source}
+      choices={currencies}
+      defaultValue={defaultValue || 'BRL'}
+      {...rest}
+    />
+  );
 }

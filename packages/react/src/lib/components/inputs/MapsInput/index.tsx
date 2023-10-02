@@ -1,40 +1,45 @@
-import LocationOnIcon from '@mui/icons-material/LocationOn'
-import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
-import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
-import parse from 'autosuggest-highlight/parse'
-import { throttle } from 'lodash'
-import React, { useEffect } from 'react'
-import { TextInputProps, useInput, useResourceContext, useTranslate } from 'react-admin'
-import { useFormContext } from 'react-hook-form'
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import parse from 'autosuggest-highlight/parse';
+import { throttle } from 'lodash';
+import React, { useEffect } from 'react';
+import {
+  TextInputProps,
+  useInput,
+  useResourceContext,
+  useTranslate,
+} from 'react-admin';
+import { useFormContext } from 'react-hook-form';
 
-import { HttpRequest } from '../../../services'
+import { HttpRequest } from '../../../services';
 
 interface MapsInputProps extends TextInputProps {
-  source: string
-  useMainText?: boolean
-  mapType?: string
-  API_URL: string
-  API_SEARCH_FIELD?: string
-  API_MAP_TYPE?: string
+  source: string;
+  useMainText?: boolean;
+  mapType?: string;
+  API_URL: string;
+  API_SEARCH_FIELD?: string;
+  API_MAP_TYPE?: string;
 }
 
 interface MainTextMatchedSubstrings {
-  offset: number
-  length: number
+  offset: number;
+  length: number;
 }
 
 interface StructuredFormatting {
-  main_text: string
-  secondary_text: string
-  main_text_matched_substrings: readonly MainTextMatchedSubstrings[]
+  main_text: string;
+  secondary_text: string;
+  main_text_matched_substrings: readonly MainTextMatchedSubstrings[];
 }
 interface PlaceType {
-  inputValue?: string
-  description: string
-  structured_formatting?: StructuredFormatting
+  inputValue?: string;
+  description: string;
+  structured_formatting?: StructuredFormatting;
 }
 
 async function getPlacePredictions(
@@ -44,22 +49,29 @@ async function getPlacePredictions(
   params: { search: string; mapType?: string },
   callback: (results?: readonly PlaceType[]) => void,
 ) {
-  let url = `${API_URL}?${API_SEARCH_FIELD}=${params.search}`
-  if (params.mapType) url += `&${API_MAP_TYPE}=${params.mapType}`
-  const results = await HttpRequest.get(url)
-  callback(results.data)
+  let url = `${API_URL}?${API_SEARCH_FIELD}=${params.search}`;
+  if (params.mapType) url += `&${API_MAP_TYPE}=${params.mapType}`;
+  const results = await HttpRequest.get(url);
+  callback(results.data);
 }
 
-const filter = createFilterOptions<PlaceType>()
+const filter = createFilterOptions<PlaceType>();
 
 export function MapsInput(props: MapsInputProps) {
-  const [value, setValue] = React.useState<PlaceType | null>(null)
-  const [inputValue, setInputValue] = React.useState('')
-  const [options, setOptions] = React.useState<readonly PlaceType[]>([])
-  const resource = useResourceContext()
-  const translate = useTranslate()
+  const [value, setValue] = React.useState<PlaceType | null>(null);
+  const [inputValue, setInputValue] = React.useState('');
+  const [options, setOptions] = React.useState<readonly PlaceType[]>([]);
+  const resource = useResourceContext();
+  const translate = useTranslate();
 
-  const { margin = 'dense', variant, fullWidth, API_URL, API_SEARCH_FIELD, API_MAP_TYPE } = props
+  const {
+    margin = 'dense',
+    variant,
+    fullWidth,
+    API_URL,
+    API_SEARCH_FIELD,
+    API_MAP_TYPE,
+  } = props;
 
   const {
     field,
@@ -67,84 +79,96 @@ export function MapsInput(props: MapsInputProps) {
     formState: { isSubmitted },
     isRequired,
     id,
-  } = useInput({ source: props.source, validate: props.validate })
+  } = useInput({ source: props.source, validate: props.validate });
 
-  const form = useFormContext()
+  const form = useFormContext();
 
   const fetch = React.useMemo(
     () =>
-      throttle((input: string, callback: (results?: readonly PlaceType[]) => void) => {
-        getPlacePredictions(
-          API_URL,
-          API_SEARCH_FIELD,
-          API_MAP_TYPE,
-          { search: input, mapType: props.mapType },
-          callback,
-        )
-      }, 200),
+      throttle(
+        (input: string, callback: (results?: readonly PlaceType[]) => void) => {
+          getPlacePredictions(
+            API_URL,
+            API_SEARCH_FIELD,
+            API_MAP_TYPE,
+            { search: input, mapType: props.mapType },
+            callback,
+          );
+        },
+        200,
+      ),
     [],
-  )
+  );
 
   useEffect(() => {
     if (field.value) {
-      const value = { description: field.value } as PlaceType
-      setValue(value)
+      const value = { description: field.value } as PlaceType;
+      setValue(value);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   useEffect(() => {
-    let active = true
+    let active = true;
 
     if (inputValue === '') {
-      setOptions(value ? [value] : [])
-      return undefined
+      setOptions(value ? [value] : []);
+      return undefined;
     }
 
     fetch(inputValue, (results?: readonly PlaceType[]) => {
       if (active) {
-        let newOptions: readonly PlaceType[] = []
+        let newOptions: readonly PlaceType[] = [];
         if (value) {
-          newOptions = [value]
+          newOptions = [value];
         }
         if (results) {
-          newOptions = [...newOptions, ...results]
+          newOptions = [...newOptions, ...results];
         }
-        setOptions(newOptions)
+        setOptions(newOptions);
       }
-    })
+    });
 
     return () => {
-      active = false
-    }
-  }, [value, inputValue, fetch])
+      active = false;
+    };
+  }, [value, inputValue, fetch]);
 
   const updateInputValue = (value: PlaceType | null) => {
     const valueToUse = props.useMainText
       ? value?.structured_formatting?.main_text ?? value?.description
-      : value?.description
+      : value?.description;
 
     if (value) {
-      form.setValue(props.source, valueToUse, { shouldDirty: true })
+      form.setValue(props.source, valueToUse, { shouldDirty: true });
     }
 
-    const inputValue = valueToUse ? ({ description: valueToUse } as PlaceType) : null
-    setValue(inputValue)
-  }
+    const inputValue = valueToUse
+      ? ({ description: valueToUse } as PlaceType)
+      : null;
+    setValue(inputValue);
+  };
 
-  const handleAutoCompleteOnChange = (_: any, newValue: string | PlaceType | null) => {
-    let newValuePlace: PlaceType | null
-    if (typeof newValue === 'string') newValuePlace = { description: newValue }
-    else if (newValue && newValue.inputValue) newValuePlace = { description: newValue.inputValue }
-    else newValuePlace = newValue
+  const handleAutoCompleteOnChange = (
+    _: any,
+    newValue: string | PlaceType | null,
+  ) => {
+    let newValuePlace: PlaceType | null;
+    if (typeof newValue === 'string') newValuePlace = { description: newValue };
+    else if (newValue && newValue.inputValue)
+      newValuePlace = { description: newValue.inputValue };
+    else newValuePlace = newValue;
 
-    setOptions(newValuePlace ? [newValuePlace, ...options] : options)
-    updateInputValue(newValuePlace)
-  }
+    setOptions(newValuePlace ? [newValuePlace, ...options] : options);
+    updateInputValue(newValuePlace);
+  };
 
-  const hasError = (isTouched || isSubmitted) && invalid
+  const hasError = (isTouched || isSubmitted) && invalid;
 
-  const label = props.label != undefined ? props.label : translate(`resources.${resource}.fields.${props.source}`)
+  const label =
+    props.label != undefined
+      ? props.label
+      : translate(`resources.${resource}.fields.${props.source}`);
 
   return (
     <Grid container spacing={2}>
@@ -155,29 +179,31 @@ export function MapsInput(props: MapsInputProps) {
           getOptionLabel={(option) => {
             // Value selected with enter, right from the input
             if (typeof option === 'string') {
-              return option
+              return option;
             }
             // Add "xxx" option created dynamically
             if (option.inputValue) {
-              return option.inputValue
+              return option.inputValue;
             }
             // Regular option
-            return option.description
+            return option.description;
           }}
           filterOptions={(options, params) => {
-            const filtered = filter(options, params)
+            const filtered = filter(options, params);
 
-            const { inputValue } = params
+            const { inputValue } = params;
             // Suggest the creation of a new value
-            const isExisting = options.some((option) => inputValue === option.description)
+            const isExisting = options.some(
+              (option) => inputValue === option.description,
+            );
             if (inputValue !== '' && !isExisting) {
               filtered.push({
                 inputValue,
                 description: `${translate('ra.action.add')} "${inputValue}"`,
-              })
+              });
             }
 
-            return filtered
+            return filtered;
           }}
           options={options}
           autoComplete
@@ -191,7 +217,7 @@ export function MapsInput(props: MapsInputProps) {
           noOptionsText={label}
           onChange={handleAutoCompleteOnChange}
           onInputChange={(_, newInputValue) => {
-            setInputValue(newInputValue)
+            setInputValue(newInputValue);
           }}
           renderInput={(params) => (
             <TextField
@@ -207,18 +233,25 @@ export function MapsInput(props: MapsInputProps) {
             />
           )}
           renderOption={(props, option) => {
-            const matches = option?.structured_formatting?.main_text_matched_substrings || []
+            const matches =
+              option?.structured_formatting?.main_text_matched_substrings || [];
             const parts = option?.structured_formatting?.main_text
               ? parse(
                   option.structured_formatting.main_text,
-                  matches?.map((match: any) => [match.offset, match.offset + match?.length]),
+                  matches?.map((match: any) => [
+                    match.offset,
+                    match.offset + match?.length,
+                  ]),
                 )
-              : []
+              : [];
             return (
               <li {...props}>
-                <Grid container alignItems='center'>
+                <Grid container alignItems="center">
                   <Grid item>
-                    <Box component={LocationOnIcon} sx={{ color: 'text.secondary', mr: 2 }} />
+                    <Box
+                      component={LocationOnIcon}
+                      sx={{ color: 'text.secondary', mr: 2 }}
+                    />
                   </Grid>
                   <Grid item xs>
                     {parts?.map((part: any, index: number) => (
@@ -231,16 +264,17 @@ export function MapsInput(props: MapsInputProps) {
                         {part.text}
                       </span>
                     ))}
-                    <Typography variant='body2' color='text.secondary'>
-                      {option?.structured_formatting?.secondary_text || option.description}
+                    <Typography variant="body2" color="text.secondary">
+                      {option?.structured_formatting?.secondary_text ||
+                        option.description}
                     </Typography>
                   </Grid>
                 </Grid>
               </li>
-            )
+            );
           }}
         />
       </Grid>
     </Grid>
-  )
+  );
 }

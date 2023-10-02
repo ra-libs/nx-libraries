@@ -43,28 +43,28 @@ export class DataProvider implements RaDataProvider {
 
   getList<RecordType extends RaRecord = any>(
     resource: string,
-    params: GetListParams
+    params: GetListParams,
   ): Promise<GetListResult<RecordType>> {
     return this.provider.getList(resource, params);
   }
 
   getOne<RecordType extends RaRecord = any>(
     resource: string,
-    params: GetOneParams<any>
+    params: GetOneParams<any>,
   ): Promise<GetOneResult<RecordType>> {
     return this.provider.getOne(resource, params);
   }
 
   getMany<RecordType extends RaRecord = any>(
     resource: string,
-    params: GetManyParams
+    params: GetManyParams,
   ): Promise<GetManyResult<RecordType>> {
     return this.provider.getMany(resource, params);
   }
 
   getManyReference<RecordType extends RaRecord = any>(
     resource: string,
-    params: GetManyReferenceParams
+    params: GetManyReferenceParams,
   ): Promise<GetManyReferenceResult<RecordType>> {
     return this.provider.getManyReference(resource, params);
   }
@@ -83,7 +83,7 @@ export class DataProvider implements RaDataProvider {
   private createOrUpdateFormData(
     resource: string,
     params: any,
-    method = 'POST'
+    method = 'POST',
   ) {
     const formData = new FormData();
     console.log('data : ', params?.data);
@@ -118,7 +118,7 @@ export class DataProvider implements RaDataProvider {
 
   update<RecordType extends RaRecord = any>(
     resource: string,
-    params: UpdateParams<any>
+    params: UpdateParams<any>,
   ): Promise<UpdateResult<RecordType>> {
     if (this.hasAnyFile(params.data)) {
       return this.createOrUpdateFormData(resource, params, 'PUT');
@@ -128,14 +128,14 @@ export class DataProvider implements RaDataProvider {
 
   updateMany<RecordType extends RaRecord = any>(
     resource: string,
-    params: UpdateManyParams<any>
+    params: UpdateManyParams<any>,
   ): Promise<UpdateManyResult<RecordType>> {
     return this.provider.updateMany(resource, params);
   }
 
   create<RecordType extends RaRecord = any>(
     resource: string,
-    params: CreateParams<any>
+    params: CreateParams<any>,
   ): Promise<CreateResult<RecordType>> {
     if (this.hasAnyFile(params.data)) {
       return this.createOrUpdateFormData(resource, params, 'POST');
@@ -145,14 +145,14 @@ export class DataProvider implements RaDataProvider {
 
   delete<RecordType extends RaRecord = any>(
     resource: string,
-    params: DeleteParams<RecordType>
+    params: DeleteParams<RecordType>,
   ): Promise<DeleteResult<RecordType>> {
     return this.provider.delete(resource, params);
   }
 
   deleteMany<RecordType extends RaRecord = any>(
     resource: string,
-    params: DeleteManyParams<RecordType>
+    params: DeleteManyParams<RecordType>,
   ): Promise<DeleteManyResult<RecordType>> {
     return this.provider.deleteMany(resource, params);
   }

@@ -1,1 +1,1 @@
-export * from './pt_br'
+export * from './pt_br';

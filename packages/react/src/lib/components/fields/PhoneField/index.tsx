@@ -1,26 +1,34 @@
-import { styled, useTheme } from '@mui/material'
-import { MuiTelInput } from 'mui-tel-input'
-import React from 'react'
-import { TextFieldProps, useLocaleState, useRecordContext, useResourceContext, useTranslate } from 'react-admin'
+import { styled, useTheme } from '@mui/material';
+import { MuiTelInput } from 'mui-tel-input';
+import React from 'react';
+import {
+  TextFieldProps,
+  useLocaleState,
+  useRecordContext,
+  useResourceContext,
+  useTranslate,
+} from 'react-admin';
 
-import { LabeledFieldProps } from '../../../config'
+import { LabeledFieldProps } from '../../../config';
 
 interface PhoneFieldProps extends TextFieldProps {
-  source: string
+  source: string;
 }
 
 export function PhoneField(props: LabeledFieldProps<PhoneFieldProps>) {
-  const { source, useLabel } = props
-  const record = useRecordContext()
+  const { source, useLabel } = props;
+  const record = useRecordContext();
 
-  const [locale] = useLocaleState()
-  const translate = useTranslate()
+  const [locale] = useLocaleState();
+  const translate = useTranslate();
 
-  const resource = useResourceContext()
-  const value = record[source]
-  const label = props.label ? props.label : translate(`resources.${resource}.fields.${source}`)
+  const resource = useResourceContext();
+  const value = record[source];
+  const label = props.label
+    ? props.label
+    : translate(`resources.${resource}.fields.${source}`);
 
-  const theme = useTheme()
+  const theme = useTheme();
 
   const MuiTelField = styled(MuiTelInput)`
     &.MuiTelInput-TextField {
@@ -49,7 +57,14 @@ export function PhoneField(props: LabeledFieldProps<PhoneFieldProps>) {
         border: none;
       }
     }
-  `
+  `;
 
-  return <MuiTelField langOfCountryName={locale} label={useLabel ? label : null} value={value} disabled />
+  return (
+    <MuiTelField
+      langOfCountryName={locale}
+      label={useLabel ? label : null}
+      value={value}
+      disabled
+    />
+  );
 }

@@ -1,2 +1,2 @@
-export * from './style'
-export * from './locales'
+export * from './style';
+export * from './locales';

@@ -155,4 +155,4 @@ export const CURRENCIES_PT_BR = {
   ZAR: 'Rand sul-africano',
   ZMK: 'Kwacha zambiana',
   ZWR: 'Dólar zimbabuense',
-}
+};

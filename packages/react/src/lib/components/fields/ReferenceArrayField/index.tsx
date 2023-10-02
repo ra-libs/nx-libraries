@@ -1,20 +1,21 @@
-import React from 'react'
+import React from 'react';
 import {
   Labeled,
   ReferenceArrayField as RaReferenceArrayField,
   ReferenceArrayFieldProps as RnReferenceArrayFieldProps,
   SingleFieldList,
-} from 'react-admin'
+} from 'react-admin';
 
-import { LabeledFieldProps } from '../../../config'
-import { ChipField } from '../ChipField'
+import { LabeledFieldProps } from '../../../config';
+import { ChipField } from '../ChipField';
 
-type ReferenceArrayFieldProps = LabeledFieldProps<RnReferenceArrayFieldProps> & {
-  source: string
-}
+type ReferenceArrayFieldProps =
+  LabeledFieldProps<RnReferenceArrayFieldProps> & {
+    source: string;
+  };
 
 export function ReferenceArrayField(props: ReferenceArrayFieldProps) {
-  const { children, useLabel, ...rest } = props
+  const { children, useLabel, ...rest } = props;
 
   const field = (
     <RaReferenceArrayField {...rest}>
@@ -26,7 +27,7 @@ export function ReferenceArrayField(props: ReferenceArrayFieldProps) {
         </SingleFieldList>
       )}
     </RaReferenceArrayField>
-  )
+  );
 
-  return useLabel ? <Labeled>{field}</Labeled> : <>{field}</>
+  return useLabel ? <Labeled>{field}</Labeled> : <>{field}</>;
 }

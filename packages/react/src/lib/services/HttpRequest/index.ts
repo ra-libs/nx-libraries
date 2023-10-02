@@ -1,26 +1,34 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 export class HttpRequest {
   static async get<T = any>(URL: string, options: AxiosRequestConfig = {}) {
-    return HttpRequest.request<T>(URL, 'get', options)
+    return HttpRequest.request<T>(URL, 'get', options);
   }
 
-  static async post<T = any>(URL: string, body: any = {}, options: AxiosRequestConfig = {}) {
+  static async post<T = any>(
+    URL: string,
+    body: any = {},
+    options: AxiosRequestConfig = {},
+  ) {
     return HttpRequest.request<T>(URL, 'post', {
       data: body,
       ...options,
-    })
+    });
   }
 
-  static async put<T = any>(URL: string, body: any = {}, options: AxiosRequestConfig = {}) {
+  static async put<T = any>(
+    URL: string,
+    body: any = {},
+    options: AxiosRequestConfig = {},
+  ) {
     return HttpRequest.request<T>(URL, 'put', {
       data: body,
       ...options,
-    })
+    });
   }
 
   static async delete<T = any>(URL: string, options: AxiosRequestConfig = {}) {
-    return HttpRequest.request<T>(URL, 'delete', options)
+    return HttpRequest.request<T>(URL, 'delete', options);
   }
 
   static async request<T = any>(
@@ -33,11 +41,11 @@ export class HttpRequest {
         url: URL,
         method,
         ...options,
-      })
-      return response
+      });
+      return response;
     } catch (error) {
-      console.error(error)
-      throw error
+      console.error(error);
+      throw error;
     }
   }
 }

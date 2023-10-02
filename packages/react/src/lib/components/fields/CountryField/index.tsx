@@ -1,17 +1,17 @@
-import React from 'react'
-import { Labeled, SelectField, SelectFieldProps } from 'react-admin'
+import React from 'react';
+import { Labeled, SelectField, SelectFieldProps } from 'react-admin';
 
-import { LabeledFieldProps } from '../../../config'
-import { useCountries } from '../../../hooks/countries'
+import { LabeledFieldProps } from '../../../config';
+import { useCountries } from '../../../hooks/countries';
 
-type CountryFieldProps = SelectFieldProps
+type CountryFieldProps = SelectFieldProps;
 
 export function CountryField(props: LabeledFieldProps<CountryFieldProps>) {
-  const { source = 'country', useLabel, ...rest } = props
+  const { source = 'country', useLabel, ...rest } = props;
 
-  const countries = useCountries()
+  const countries = useCountries();
 
-  const field = <SelectField source={source} choices={countries} {...rest} />
+  const field = <SelectField source={source} choices={countries} {...rest} />;
 
-  return useLabel ? <Labeled>{field}</Labeled> : <>{field}</>
+  return useLabel ? <Labeled>{field}</Labeled> : <>{field}</>;
 }

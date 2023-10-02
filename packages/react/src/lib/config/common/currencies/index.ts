@@ -155,11 +155,11 @@ export const CURRENCIES = [
   { id: 'ZAR', symbol: 'R' },
   { id: 'ZMK', symbol: 'ZK' },
   { id: 'ZWR', symbol: 'Z$' },
-]
+];
 
 export const MAPPED_CURRENCIES = CURRENCIES.reduce((acc: any, curr) => {
-  acc[curr.id] = curr
-  return acc
-}, {})
+  acc[curr.id] = curr;
+  return acc;
+}, {});
 
-export * from './locales'
+export * from './locales';

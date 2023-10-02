@@ -1,40 +1,49 @@
-import { matchIsValidTel,MuiTelInput } from 'mui-tel-input'
-import React, { useEffect, useState } from 'react'
-import { TextInputProps, useInput, useLocaleState, useResourceContext, useTranslate } from 'react-admin'
-import { useFormContext } from 'react-hook-form'
+import { matchIsValidTel, MuiTelInput } from 'mui-tel-input';
+import React, { useEffect, useState } from 'react';
+import {
+  TextInputProps,
+  useInput,
+  useLocaleState,
+  useResourceContext,
+  useTranslate,
+} from 'react-admin';
+import { useFormContext } from 'react-hook-form';
 
-type PhoneInputProps = TextInputProps
+type PhoneInputProps = TextInputProps;
 
 export function PhoneInput(props: PhoneInputProps) {
-  const [locale] = useLocaleState()
-  const translate = useTranslate()
-  const { setValue: setFormValue } = useFormContext()
-  const [value, setValue] = useState('')
+  const [locale] = useLocaleState();
+  const translate = useTranslate();
+  const { setValue: setFormValue } = useFormContext();
+  const [value, setValue] = useState('');
 
-  const { margin = 'dense', ...propsRest } = props
+  const { margin = 'dense', ...propsRest } = props;
 
   const {
     field,
     fieldState: { isTouched, invalid, error },
     formState: { isSubmitted },
     isRequired,
-  } = useInput(props)
+  } = useInput(props);
 
-  const hasError = (isTouched || isSubmitted) && invalid
+  const hasError = (isTouched || isSubmitted) && invalid;
 
-  const resource = useResourceContext()
-  const label = props.label ? props.label : translate(`resources.${resource}.fields.${field.name}`)
+  const resource = useResourceContext();
+  const label = props.label
+    ? props.label
+    : translate(`resources.${resource}.fields.${field.name}`);
 
   const handleChange = (newPhone: string) => {
-    setValue(newPhone)
-    if (matchIsValidTel(newPhone)) setFormValue(props.source, newPhone, { shouldDirty: true })
-    else setFormValue(props.source, null, { shouldDirty: true })
-  }
+    setValue(newPhone);
+    if (matchIsValidTel(newPhone))
+      setFormValue(props.source, newPhone, { shouldDirty: true });
+    else setFormValue(props.source, null, { shouldDirty: true });
+  };
 
   useEffect(() => {
-    handleChange(field.value)
+    handleChange(field.value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <MuiTelInput
@@ -51,5 +60,5 @@ export function PhoneInput(props: PhoneInputProps) {
       error={hasError}
       helperText={hasError ? translate(error?.message || '') : ''}
     />
-  )
+  );
 }

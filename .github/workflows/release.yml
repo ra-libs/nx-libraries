@@ -8,7 +8,6 @@ on:
 env:
   HUSKY: 0
 
-
 jobs:
   semantic-release:
     if: "!contains(github.event.head_commit.message, 'chore')"

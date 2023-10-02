@@ -1,14 +1,21 @@
-import React from 'react'
-import { DatagridProps, SimpleList, SimpleListProps } from 'react-admin'
+import React from 'react';
+import { DatagridProps, SimpleList, SimpleListProps } from 'react-admin';
 
-import { useScreenSize } from '../../hooks/style'
-import { Datagrid } from '../Datagrid'
+import { useScreenSize } from '../../hooks/style';
+import { Datagrid } from '../Datagrid';
 
-type ResponsiveDatagridProps = SimpleListProps & DatagridProps
+type ResponsiveDatagridProps = SimpleListProps & DatagridProps;
 
 export function ResponsiveDatagrid(props: ResponsiveDatagridProps) {
-  const { isSmall } = useScreenSize()
-  const { primaryText, secondaryText, tertiaryText, linkType, rowClick, children } = props
+  const { isSmall } = useScreenSize();
+  const {
+    primaryText,
+    secondaryText,
+    tertiaryText,
+    linkType,
+    rowClick,
+    children,
+  } = props;
 
   return isSmall ? (
     <SimpleList
@@ -19,5 +26,5 @@ export function ResponsiveDatagrid(props: ResponsiveDatagridProps) {
     />
   ) : (
     <Datagrid rowClick={rowClick ?? 'show'}>{children}</Datagrid>
-  )
+  );
 }
