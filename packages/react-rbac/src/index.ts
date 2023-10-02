@@ -1,1 +1,1 @@
-export * from './lib/react-rbac';
+export * from './lib';

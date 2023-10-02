@@ -7,14 +7,20 @@
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["packages/react-rbac/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "packages/react-rbac/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
-    "build": {
+    "build-lib": {
       "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/react-rbac"
@@ -26,6 +32,21 @@
         "production": {
           "mode": "production"
         }
+      }
+    },
+    "build": {
+      "dependsOn": [
+        "build-lib"
+      ],
+      "command": "cp packages/react-rbac/README.md dist/packages/react-rbac/README.md"
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "react-rbac-v${VERSION}"
       }
     }
   }
