@@ -5,22 +5,20 @@ on:
 
 env:
   HUSKY: 0
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  GH_TOKEN: ${{ secrets.GH_SEMANTIC_TOKEN }}
 
 jobs:
   main:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
-      id-token: write # to enable use of OIDC for npm provenance
-      packages: write # to be able to publish to GitHub Packages
     steps:
-      - name: Checkout Repository Code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_SEMANTIC_TOKEN }} # Custom user with needed permissions
+      - name: Setup Git User
+        run: |
+          git config --global user.name "Rabah Zeineddine"
+          git config --global user.email "rabah.zeineddine@hotmail.com"
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v3
       - run: npm ci
