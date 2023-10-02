@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "target": "es6",
+    "importHelpers": true,
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@ra-libs/react": ["packages/react/src/index.ts"],
+      "@ra-libs/react-rbac": ["packages/react-rbac/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,13 +1,7 @@
 {
   "name": "@ra-libs/react-rbac",
   "version": "1.4.0",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "private": false,
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
-    }
-  }
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "private": false
 }
