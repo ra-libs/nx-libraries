@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/ra-libs/nx-libraries/compare/react-rbac-v1.4.0...react-rbac-v1.4.1) (2023-10-02)
+
+
+### Bug Fixes
+
+* build tsc ([88f5b96](https://github.com/ra-libs/nx-libraries/commit/88f5b9673ad7fa79088690d235cf2242abf1d4e5))
+
 # [1.4.0](https://github.com/ra-libs/nx-libraries/compare/react-rbac-v1.3.5...react-rbac-v1.4.0) (2023-10-02)
 
 ### Features
