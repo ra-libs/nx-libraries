@@ -1,24 +1,22 @@
 ## [1.8.27](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.26...react-v1.8.27) (2023-10-02)
 
-
 ### Bug Fixes
 
-* cp readme ([a847785](https://github.com/ra-libs/nx-libraries/commit/a8477859e2b0c027bf425e804fe9019f156bb61d))
+- cp readme ([a847785](https://github.com/ra-libs/nx-libraries/commit/a8477859e2b0c027bf425e804fe9019f156bb61d))
 
 ## [1.8.26](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.25...react-v1.8.26) (2023-10-02)
 
-
 ### Bug Fixes
 
-* add outputPath ([ac4a115](https://github.com/ra-libs/nx-libraries/commit/ac4a11559b5fff34d647f3e3490e9a2b23101a14))
-* docs ([a5e8083](https://github.com/ra-libs/nx-libraries/commit/a5e80837d12139c86f5209873e2fa66631719e15))
-* docs ([fd783cd](https://github.com/ra-libs/nx-libraries/commit/fd783cd1b19d82d34a1d466f7a07ffed24a6457a))
-* downgrade semantic npm ([6bd9f48](https://github.com/ra-libs/nx-libraries/commit/6bd9f48844cac13966dafcd4a5507ac2b502b169))
-* fixes ([52b0706](https://github.com/ra-libs/nx-libraries/commit/52b070665406c8a1c5dd97933360c3a6e1909b22))
-* fixes ([1be1cdb](https://github.com/ra-libs/nx-libraries/commit/1be1cdbfde06484799e0651dac014bab51713db2))
-* fixes ([6b8fa4e](https://github.com/ra-libs/nx-libraries/commit/6b8fa4e7a03b44e561296ebdce12072e565b59b5))
-* fixes ([22fa2e2](https://github.com/ra-libs/nx-libraries/commit/22fa2e2e010c9712c46969780cc8a5b078fa756b))
-* fixes ([20c4379](https://github.com/ra-libs/nx-libraries/commit/20c4379c1dfff6ccfed336240b442c768e3209cf))
+- add outputPath ([ac4a115](https://github.com/ra-libs/nx-libraries/commit/ac4a11559b5fff34d647f3e3490e9a2b23101a14))
+- docs ([a5e8083](https://github.com/ra-libs/nx-libraries/commit/a5e80837d12139c86f5209873e2fa66631719e15))
+- docs ([fd783cd](https://github.com/ra-libs/nx-libraries/commit/fd783cd1b19d82d34a1d466f7a07ffed24a6457a))
+- downgrade semantic npm ([6bd9f48](https://github.com/ra-libs/nx-libraries/commit/6bd9f48844cac13966dafcd4a5507ac2b502b169))
+- fixes ([52b0706](https://github.com/ra-libs/nx-libraries/commit/52b070665406c8a1c5dd97933360c3a6e1909b22))
+- fixes ([1be1cdb](https://github.com/ra-libs/nx-libraries/commit/1be1cdbfde06484799e0651dac014bab51713db2))
+- fixes ([6b8fa4e](https://github.com/ra-libs/nx-libraries/commit/6b8fa4e7a03b44e561296ebdce12072e565b59b5))
+- fixes ([22fa2e2](https://github.com/ra-libs/nx-libraries/commit/22fa2e2e010c9712c46969780cc8a5b078fa756b))
+- fixes ([20c4379](https://github.com/ra-libs/nx-libraries/commit/20c4379c1dfff6ccfed336240b442c768e3209cf))
 
 ## [1.8.25](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.24...react-v1.8.25) (2023-10-02)
 
