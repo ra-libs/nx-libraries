@@ -1,3 +1,11 @@
+## [1.8.24](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.23...react-v1.8.24) (2023-10-02)
+
+
+### Bug Fixes
+
+* add readme ([8674b1a](https://github.com/ra-libs/nx-libraries/commit/8674b1a5b99d4889a2beb4983f7bdf181192d1c8))
+* add readme ([fc65b27](https://github.com/ra-libs/nx-libraries/commit/fc65b2745757ffbe8ce6a7981b966605bfcbce91))
+
 ## [1.8.23](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.22...react-v1.8.23) (2023-10-02)
 
 ### Bug Fixes
