@@ -14,8 +14,6 @@ Run npm install
 ```bash
 npm install @ra-libs/react
 ```
-
-
 ### Documentation
 
 check the [documentation page](https://ra-libs.gitbook.io/react)

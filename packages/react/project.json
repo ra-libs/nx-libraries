@@ -12,7 +12,7 @@
         "lintFilePatterns": ["packages/react/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "build": {
+    "build-lib": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
@@ -27,6 +27,10 @@
           "mode": "production"
         }
       }
+    },
+    "build": {
+      "dependsOn": ["build-lib"],
+      "command": "cp packages/react/README.md dist/packages/react/README.md"
     },
     "semantic-release": {
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",
