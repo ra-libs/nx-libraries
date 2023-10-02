@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "husky install"
   },
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/preset-react": "^7.22.15",
