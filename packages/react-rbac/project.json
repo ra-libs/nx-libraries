@@ -12,25 +12,15 @@
         "lintFilePatterns": ["packages/react-rbac/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "build-lib": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/packages/react-rbac"
-      },
-      "configurations": {
-        "development": {
-          "mode": "development"
-        },
-        "production": {
-          "mode": "production"
-        }
-      }
-    },
     "build": {
-      "dependsOn": ["build-lib"],
-      "command": "cp packages/react-rbac/README.md dist/packages/react-rbac/README.md"
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/react-rbac",
+        "main": "packages/react-rbac/src/index.ts",
+        "tsConfig": "packages/react-rbac/tsconfig.lib.json",
+        "assets": ["packages/react-rbac/*.md"],
+        "transformers": []
+      }
     },
     "semantic-release": {
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",

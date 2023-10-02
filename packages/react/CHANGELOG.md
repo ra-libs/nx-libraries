@@ -1,9 +1,8 @@
 # [1.9.0](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.27...react-v1.9.0) (2023-10-02)
 
-
 ### Features
 
-* move rbac lib ([9590134](https://github.com/ra-libs/nx-libraries/commit/9590134d639691068d9b98b3d1823bd54a4de8d0))
+- move rbac lib ([9590134](https://github.com/ra-libs/nx-libraries/commit/9590134d639691068d9b98b3d1823bd54a4de8d0))
 
 ## [1.8.27](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.26...react-v1.8.27) (2023-10-02)
 
