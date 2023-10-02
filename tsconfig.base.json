@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ra-libs/react": ["packages/react/src/index.ts"]
+      "@ra-libs/react": ["packages/react/src/index.ts"],
+      "@ra-libs/react-rbac": ["packages/react-rbac/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
