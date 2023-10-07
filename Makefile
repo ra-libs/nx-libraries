@@ -10,7 +10,9 @@ lint:
 	npx nx affected -t lint --fix
 
 yalc-publish:
+	nx run-many -t build
 	cd dist/packages/react && yalc publish
+	cd dist/packages/react-rbac && yalc publish
 
 update:
 	nx migrate latest

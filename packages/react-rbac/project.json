@@ -18,8 +18,7 @@
         "outputPath": "dist/packages/react-rbac",
         "main": "packages/react-rbac/src/index.ts",
         "tsConfig": "packages/react-rbac/tsconfig.lib.json",
-        "assets": ["packages/react-rbac/*.md"],
-        "transformers": []
+        "assets": ["packages/react-rbac/*.md"]
       }
     },
     "semantic-release": {
