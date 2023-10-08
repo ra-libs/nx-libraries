@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/ra-libs/nx-libraries/compare/react-v1.10.1...react-v1.10.2) (2023-10-08)
+
+
+### Bug Fixes
+
+* timezone field label ([fcd678e](https://github.com/ra-libs/nx-libraries/commit/fcd678e6be1c07681f042c57cea5e4d4f1bd5eb8))
+
 ## [1.10.1](https://github.com/ra-libs/nx-libraries/compare/react-v1.10.0...react-v1.10.1) (2023-10-08)
 
 
