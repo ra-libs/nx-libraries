@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/ra-libs/nx-libraries/compare/react-rbac-v1.4.2...react-rbac-v1.5.0) (2023-10-08)
+
+
+### Features
+
+* add timezone fields and inputs ([57cc08b](https://github.com/ra-libs/nx-libraries/commit/57cc08b770dfff726f3f67460cb19f76fde54084))
+
 ## [1.4.2](https://github.com/ra-libs/nx-libraries/compare/react-rbac-v1.4.1...react-rbac-v1.4.2) (2023-10-07)
 
 
