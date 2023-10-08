@@ -1,3 +1,16 @@
+# [1.10.0](https://github.com/ra-libs/nx-libraries/compare/react-v1.9.2...react-v1.10.0) (2023-10-08)
+
+
+### Bug Fixes
+
+* build ([ac402d7](https://github.com/ra-libs/nx-libraries/commit/ac402d79a173543b0df57e4d648cd8143a65f098))
+* maps components ([44d0c08](https://github.com/ra-libs/nx-libraries/commit/44d0c08f9d8c0f5767ce646823deeb80287ea68f))
+
+
+### Features
+
+* add timezone fields and inputs ([57cc08b](https://github.com/ra-libs/nx-libraries/commit/57cc08b770dfff726f3f67460cb19f76fde54084))
+
 ## [1.9.2](https://github.com/ra-libs/nx-libraries/compare/react-v1.9.1...react-v1.9.2) (2023-10-07)
 
 
