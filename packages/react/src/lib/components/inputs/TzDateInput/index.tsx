@@ -47,7 +47,7 @@ export function TzDateInput(props: TzDateInputProps) {
     source: props.timezoneSource,
   });
 
-  const [value, setValue] = React.useState<Dayjs | null>(null);
+  const [value, setValue] = React.useState<Dayjs | null>();
 
   const handleValueChange = (newValue: Dayjs | null) => {
     setFormValue(field.name, newValue?.toISOString(), { shouldDirty: true });
@@ -55,26 +55,10 @@ export function TzDateInput(props: TzDateInputProps) {
 
   useEffect(() => {
     if (field.value) {
-      setValue(dayjs.tz(field.value, timezoneSourceInput.field.value));
+      const date = dayjs.utc(field.value);
+      setValue(date.tz(timezoneSourceInput.field.value));
     }
   }, [field.value]);
-
-  useEffect(() => {
-    if (timezoneSourceInput?.field.value) {
-      setFormValue(
-        field.name,
-        dayjs.tz(field.value, timezoneSourceInput?.field.value).toISOString(),
-      );
-    }
-  }, [timezoneSourceInput?.field.value]);
-
-  console.table({
-    component: 'TzDateInput',
-    name: field.name,
-    fieldValue: field.value,
-    timezoneSource: timezoneSourceInput?.field.value,
-    value: value?.toISOString(),
-  });
 
   return (
     <LocalizationProvider

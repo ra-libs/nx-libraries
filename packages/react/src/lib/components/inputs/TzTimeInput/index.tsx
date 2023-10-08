@@ -41,7 +41,7 @@ export function TzTimeInput(props: TzTimeInputProps) {
     source: props.timezoneSource,
   });
 
-  const [value, setValue] = React.useState<Dayjs | null>();
+  const [value, setValue] = React.useState<Dayjs | null>(null);
 
   const hasError = (isTouched || isSubmitted) && invalid;
 
@@ -52,22 +52,17 @@ export function TzTimeInput(props: TzTimeInputProps) {
     : translate(`resources.${resource}.fields.${field.name}`);
 
   const handleValueChange = (newValue: Dayjs | null) => {
-    setFormValue(field.name, newValue?.toISOString(), { shouldDirty: true });
+    setFormValue(field.name, newValue?.toISOString(), {
+      shouldDirty: true,
+    });
   };
 
   useEffect(() => {
     if (field.value) {
-      setValue(dayjs.tz(field.value, timezoneSourceInput.field.value));
+      const date = dayjs.utc(field.value);
+      setValue(dayjs.tz(date, timezoneSourceInput.field.value));
     }
   }, [field.value]);
-
-  console.table({
-    component: 'TzTimeInput',
-    name: field.name,
-    fieldValue: field.value,
-    timezoneSource: timezoneSourceInput?.field.value,
-    value: value?.toISOString(),
-  });
 
   return (
     <LocalizationProvider
@@ -75,7 +70,6 @@ export function TzTimeInput(props: TzTimeInputProps) {
       adapterLocale={adapterLocale}
     >
       <TimePicker
-        {...field}
         value={value}
         label={label}
         onChange={handleValueChange}

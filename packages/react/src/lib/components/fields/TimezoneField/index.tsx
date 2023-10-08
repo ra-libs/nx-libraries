@@ -16,7 +16,7 @@ interface TimezoneFieldProps extends LabeledFieldProps<TextFieldProps> {
 }
 
 export function TimezoneField(props: TimezoneFieldProps) {
-  const { useLabel, source, ...rest } = props;
+  const { useLabel, source } = props;
 
   const record = useRecordContext();
 

@@ -24,14 +24,14 @@ export function TzTimeField(props: TzTimeFieldProps) {
   const record = useRecordContext();
   const timezone = record?.[timezoneSource];
   const date = record?.[rest.source];
-  const value = dayjs.tz(date, timezone);
+  const utcDate = dayjs(date);
 
   const field = (
     <RaDateField
       {...rest}
       showDate={false}
       showTime
-      transform={() => value.toDate()}
+      transform={() => utcDate.toDate()}
       options={{
         hour: '2-digit',
         minute: '2-digit',
