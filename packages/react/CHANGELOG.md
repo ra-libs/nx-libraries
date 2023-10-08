@@ -7,38 +7,33 @@
 
 ## [1.10.1](https://github.com/ra-libs/nx-libraries/compare/react-v1.10.0...react-v1.10.1) (2023-10-08)
 
-
 ### Bug Fixes
 
-* optional adapterLocale ([d9beb30](https://github.com/ra-libs/nx-libraries/commit/d9beb309cb886852ee8c88360b91a8afcb5e2030))
+- optional adapterLocale ([d9beb30](https://github.com/ra-libs/nx-libraries/commit/d9beb309cb886852ee8c88360b91a8afcb5e2030))
 
 # [1.10.0](https://github.com/ra-libs/nx-libraries/compare/react-v1.9.2...react-v1.10.0) (2023-10-08)
 
-
 ### Bug Fixes
 
-* build ([ac402d7](https://github.com/ra-libs/nx-libraries/commit/ac402d79a173543b0df57e4d648cd8143a65f098))
-* maps components ([44d0c08](https://github.com/ra-libs/nx-libraries/commit/44d0c08f9d8c0f5767ce646823deeb80287ea68f))
-
+- build ([ac402d7](https://github.com/ra-libs/nx-libraries/commit/ac402d79a173543b0df57e4d648cd8143a65f098))
+- maps components ([44d0c08](https://github.com/ra-libs/nx-libraries/commit/44d0c08f9d8c0f5767ce646823deeb80287ea68f))
 
 ### Features
 
-* add timezone fields and inputs ([57cc08b](https://github.com/ra-libs/nx-libraries/commit/57cc08b770dfff726f3f67460cb19f76fde54084))
+- add timezone fields and inputs ([57cc08b](https://github.com/ra-libs/nx-libraries/commit/57cc08b770dfff726f3f67460cb19f76fde54084))
 
 ## [1.9.2](https://github.com/ra-libs/nx-libraries/compare/react-v1.9.1...react-v1.9.2) (2023-10-07)
 
-
 ### Bug Fixes
 
-* build tsc ([694e015](https://github.com/ra-libs/nx-libraries/commit/694e0156fc39fd470b60c704f92e46c5a5b66293))
-* update deps ([7a3fdc1](https://github.com/ra-libs/nx-libraries/commit/7a3fdc1468f395a220d5777c62d27200302f7f8d))
+- build tsc ([694e015](https://github.com/ra-libs/nx-libraries/commit/694e0156fc39fd470b60c704f92e46c5a5b66293))
+- update deps ([7a3fdc1](https://github.com/ra-libs/nx-libraries/commit/7a3fdc1468f395a220d5777c62d27200302f7f8d))
 
 ## [1.9.1](https://github.com/ra-libs/nx-libraries/compare/react-v1.9.0...react-v1.9.1) (2023-10-02)
 
-
 ### Bug Fixes
 
-* build tsc ([88f5b96](https://github.com/ra-libs/nx-libraries/commit/88f5b9673ad7fa79088690d235cf2242abf1d4e5))
+- build tsc ([88f5b96](https://github.com/ra-libs/nx-libraries/commit/88f5b9673ad7fa79088690d235cf2242abf1d4e5))
 
 # [1.9.0](https://github.com/ra-libs/nx-libraries/compare/react-v1.8.27...react-v1.9.0) (2023-10-02)
 
