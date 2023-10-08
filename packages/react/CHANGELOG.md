@@ -1,3 +1,11 @@
+## [1.10.3](https://github.com/ra-libs/nx-libraries/compare/react-v1.10.2...react-v1.10.3) (2023-10-08)
+
+
+### Bug Fixes
+
+* remove console log ([1550cf2](https://github.com/ra-libs/nx-libraries/commit/1550cf241f32df4921550048f6b7c7a891655726))
+* timezone fields ([c9d9860](https://github.com/ra-libs/nx-libraries/commit/c9d98603526117d13d9b7ab28b5fe3f105546348))
+
 ## [1.10.2](https://github.com/ra-libs/nx-libraries/compare/react-v1.10.1...react-v1.10.2) (2023-10-08)
 
 
