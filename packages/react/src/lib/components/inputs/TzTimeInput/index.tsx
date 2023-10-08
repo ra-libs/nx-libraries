@@ -17,7 +17,7 @@ import { useFormContext } from 'react-hook-form';
 
 interface TzTimeInputProps extends DateInputProps {
   timezoneSource: string;
-  adapterLocale: string;
+  adapterLocale?: string;
 }
 
 dayjs.extend(utc);
