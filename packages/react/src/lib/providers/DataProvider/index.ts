@@ -86,7 +86,6 @@ export class DataProvider implements RaDataProvider {
     method = 'POST',
   ) {
     const formData = new FormData();
-    console.log('data : ', params?.data);
     Object.entries(params?.data).forEach(([key, value]: [string, any]) => {
       if (Array.isArray(value)) {
         value.forEach((item: any) => {
