@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/ra-libs/nx-libraries/compare/react-v1.10.0...react-v1.10.1) (2023-10-08)
+
+
+### Bug Fixes
+
+* optional adapterLocale ([d9beb30](https://github.com/ra-libs/nx-libraries/commit/d9beb309cb886852ee8c88360b91a8afcb5e2030))
+
 # [1.10.0](https://github.com/ra-libs/nx-libraries/compare/react-v1.9.2...react-v1.10.0) (2023-10-08)
 
 
