@@ -9,6 +9,9 @@ lint:
 	npx nx format:write
 	npx nx affected -t lint --fix
 
+build:
+	npx nx run-many -t build --all
+
 yalc-publish:
 	nx run-many -t build
 	cd dist/packages/react && yalc publish

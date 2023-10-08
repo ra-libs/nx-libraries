@@ -65,7 +65,7 @@ export function TimezoneInput(props: DateInputProps) {
   }, [field.value]);
 
   const handleValueChange = (
-    event: React.SyntheticEvent,
+    _: React.SyntheticEvent,
     newOptionValue: OptionValue | null,
   ) => {
     setFormValue(props.source, newOptionValue?.value, {
