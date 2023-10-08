@@ -4,6 +4,8 @@ import {
   Labeled,
   TextFieldProps,
   useRecordContext,
+  useResourceContext,
+  useTranslate,
 } from 'react-admin';
 import timezones from 'timezones.json';
 
@@ -14,16 +16,21 @@ interface TimezoneFieldProps extends LabeledFieldProps<TextFieldProps> {
 }
 
 export function TimezoneField(props: TimezoneFieldProps) {
-  const { useLabel, ...rest } = props;
+  const { useLabel, source, ...rest } = props;
 
   const record = useRecordContext();
 
   const timezone = timezones.find(
-    (timezone) => timezone.utc[0] === record?.[rest.source],
+    (timezone) => timezone.utc[0] === record?.[source],
   );
 
-  const field = (
-    <FunctionField label={rest.label} render={() => timezone?.text} />
-  );
+  const resource = useResourceContext();
+  const translate = useTranslate();
+
+  const label = props.label
+    ? props.label
+    : translate(`resources.${resource}.fields.${source}`);
+
+  const field = <FunctionField label={label} render={() => timezone?.text} />;
   return useLabel ? <Labeled>{field}</Labeled> : <>{field}</>;
 }
