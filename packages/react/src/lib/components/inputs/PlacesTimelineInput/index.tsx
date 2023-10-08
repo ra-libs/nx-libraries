@@ -9,14 +9,13 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from '@mui/lab';
-import { IconButton } from '@mui/material';
+import { debounce, IconButton } from '@mui/material';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import parse from 'autosuggest-highlight/parse';
-import { throttle } from 'lodash';
 import React, { useEffect } from 'react';
 import {
   TextInputProps,
@@ -95,7 +94,7 @@ export function PlacesTimelineInput(props: PlacesTimelineInputProps) {
 
   const fetch = React.useMemo(
     () =>
-      throttle(
+      debounce(
         (input: string, callback: (results?: readonly PlaceType[]) => void) => {
           getPlacePredictions(
             API_URL,
@@ -105,7 +104,7 @@ export function PlacesTimelineInput(props: PlacesTimelineInputProps) {
             callback,
           );
         },
-        200,
+        400,
       ),
     [],
   );

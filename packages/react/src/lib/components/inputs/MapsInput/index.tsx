@@ -1,11 +1,11 @@
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { debounce } from '@mui/material';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import parse from 'autosuggest-highlight/parse';
-import { throttle } from 'lodash';
 import React, { useEffect } from 'react';
 import {
   TextInputProps,
@@ -85,7 +85,7 @@ export function MapsInput(props: MapsInputProps) {
 
   const fetch = React.useMemo(
     () =>
-      throttle(
+      debounce(
         (input: string, callback: (results?: readonly PlaceType[]) => void) => {
           getPlacePredictions(
             API_URL,
@@ -95,7 +95,7 @@ export function MapsInput(props: MapsInputProps) {
             callback,
           );
         },
-        200,
+        400,
       ),
     [],
   );
