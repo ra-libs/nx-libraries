@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/ra-libs/nx-libraries/compare/react-rbac-v1.6.1...react-rbac-v1.6.2) (2023-10-09)
+
+
+### Bug Fixes
+
+* flat version ([3edfa15](https://github.com/ra-libs/nx-libraries/commit/3edfa15330a3c63126ae99b01e4e6a79b9c89f23))
+
 ## [1.6.1](https://github.com/ra-libs/nx-libraries/compare/react-rbac-v1.6.0...react-rbac-v1.6.1) (2023-10-09)
 
 
