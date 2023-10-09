@@ -18,6 +18,7 @@ import { useFormContext } from 'react-hook-form';
 interface TzTimeInputProps extends DateInputProps {
   timezoneSource: string;
   adapterLocale?: string;
+  dateSource?: string;
 }
 
 dayjs.extend(utc);
@@ -27,7 +28,7 @@ export function TzTimeInput(props: TzTimeInputProps) {
   const translate = useTranslate();
   const { setValue: setFormValue } = useFormContext();
 
-  const { margin = 'dense', adapterLocale = 'pt-br' } = props;
+  const { margin = 'dense', adapterLocale = 'pt-br', dateSource } = props;
 
   const {
     field,
@@ -51,7 +52,18 @@ export function TzTimeInput(props: TzTimeInputProps) {
     ? props.label
     : translate(`resources.${resource}.fields.${field.name}`);
 
+  const dateSourceInput = useInput({
+    source: dateSource || '',
+  });
+
   const handleValueChange = (newValue: Dayjs | null) => {
+    if (dateSourceInput.id !== id) {
+      const dateSourceValue = dateSourceInput.field.value as Date;
+      newValue?.set('year', dateSourceValue.getUTCFullYear());
+      newValue?.set('month', dateSourceValue.getUTCMonth());
+      newValue?.set('date', dateSourceValue.getUTCDate());
+    }
+
     setFormValue(field.name, newValue?.toISOString(), {
       shouldDirty: true,
     });
