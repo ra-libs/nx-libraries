@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/ra-libs/nx-libraries/compare/react-v1.10.4...react-v1.11.0) (2023-10-09)
+
+
+### Bug Fixes
+
+* update deps ([7ff9a48](https://github.com/ra-libs/nx-libraries/commit/7ff9a48e83c3572c964894492f711eb33fd1830c))
+
+
+### Features
+
+* add nestjs lib ([e26c742](https://github.com/ra-libs/nx-libraries/commit/e26c74244fcc51f76004b42449553f5615e91e25))
+
 ## [1.10.4](https://github.com/ra-libs/nx-libraries/compare/react-v1.10.3...react-v1.10.4) (2023-10-09)
 
 
