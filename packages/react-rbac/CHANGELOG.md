@@ -1,14 +1,12 @@
 # [1.6.0](https://github.com/ra-libs/nx-libraries/compare/react-rbac-v1.5.0...react-rbac-v1.6.0) (2023-10-09)
 
-
 ### Bug Fixes
 
-* update deps ([7ff9a48](https://github.com/ra-libs/nx-libraries/commit/7ff9a48e83c3572c964894492f711eb33fd1830c))
-
+- update deps ([7ff9a48](https://github.com/ra-libs/nx-libraries/commit/7ff9a48e83c3572c964894492f711eb33fd1830c))
 
 ### Features
 
-* add nestjs lib ([e26c742](https://github.com/ra-libs/nx-libraries/commit/e26c74244fcc51f76004b42449553f5615e91e25))
+- add nestjs lib ([e26c742](https://github.com/ra-libs/nx-libraries/commit/e26c74244fcc51f76004b42449553f5615e91e25))
 
 # [1.5.0](https://github.com/ra-libs/nx-libraries/compare/react-rbac-v1.4.2...react-rbac-v1.5.0) (2023-10-08)
 
