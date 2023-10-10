@@ -1,6 +1,6 @@
 {
   "name": "@ra-libs/react-rbac",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "private": false
