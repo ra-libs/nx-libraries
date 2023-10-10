@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/ra-libs/nx-libraries/compare/react-v1.11.3...react-v1.11.4) (2023-10-10)
+
+
+### Bug Fixes
+
+* flat version ([da24e3c](https://github.com/ra-libs/nx-libraries/commit/da24e3c4cae1bd5a764b085fa34cad69fdfc4a2f))
+
 ## [1.11.3](https://github.com/ra-libs/nx-libraries/compare/react-v1.11.2...react-v1.11.3) (2023-10-10)
 
 
