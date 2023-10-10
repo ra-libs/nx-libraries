@@ -7,10 +7,9 @@
 
 ## [1.11.2](https://github.com/ra-libs/nx-libraries/compare/react-v1.11.1...react-v1.11.2) (2023-10-09)
 
-
 ### Bug Fixes
 
-* flat version ([3edfa15](https://github.com/ra-libs/nx-libraries/commit/3edfa15330a3c63126ae99b01e4e6a79b9c89f23))
+- flat version ([3edfa15](https://github.com/ra-libs/nx-libraries/commit/3edfa15330a3c63126ae99b01e4e6a79b9c89f23))
 
 ## [1.11.1](https://github.com/ra-libs/nx-libraries/compare/react-v1.11.0...react-v1.11.1) (2023-10-09)
 

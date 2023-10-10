@@ -7,12 +7,11 @@
 
 ## [1.5.13](https://github.com/ra-libs/nx-libraries/compare/nestjs-v1.5.12...nestjs-v1.5.13) (2023-10-09)
 
-
 ### Bug Fixes
 
-* flat version ([3edfa15](https://github.com/ra-libs/nx-libraries/commit/3edfa15330a3c63126ae99b01e4e6a79b9c89f23))
-* flat version ([85be305](https://github.com/ra-libs/nx-libraries/commit/85be3051e4b98aad8350033e6feeacd532c73ad0))
-* flat version ([1b8e3c5](https://github.com/ra-libs/nx-libraries/commit/1b8e3c5a31b988efe75d30c1b55f53d9370a89ab))
+- flat version ([3edfa15](https://github.com/ra-libs/nx-libraries/commit/3edfa15330a3c63126ae99b01e4e6a79b9c89f23))
+- flat version ([85be305](https://github.com/ra-libs/nx-libraries/commit/85be3051e4b98aad8350033e6feeacd532c73ad0))
+- flat version ([1b8e3c5](https://github.com/ra-libs/nx-libraries/commit/1b8e3c5a31b988efe75d30c1b55f53d9370a89ab))
 
 ## [1.5.12](https://github.com/ra-libs/nx-libraries/compare/nestjs-v1.5.11...nestjs-v1.5.12) (2023-10-09)
 
