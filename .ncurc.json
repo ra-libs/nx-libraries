@@ -1,0 +1,4 @@
+{
+  "upgrade": false,
+  "reject": ["eslint-config-prettier", "@typescript-eslint/parser", "flat"]
+}
