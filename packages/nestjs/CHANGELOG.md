@@ -1,3 +1,10 @@
+## [1.5.15](https://github.com/ra-libs/nx-libraries/compare/nestjs-v1.5.14...nestjs-v1.5.15) (2023-10-10)
+
+
+### Bug Fixes
+
+* flat version ([da24e3c](https://github.com/ra-libs/nx-libraries/commit/da24e3c4cae1bd5a764b085fa34cad69fdfc4a2f))
+
 ## [1.5.14](https://github.com/ra-libs/nx-libraries/compare/nestjs-v1.5.13...nestjs-v1.5.14) (2023-10-10)
 
 
