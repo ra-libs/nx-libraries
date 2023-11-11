@@ -74,7 +74,7 @@
     "@nestjs/platform-express": "^10.2.7",
     "@prisma/client": "^5.4.2",
     "autosuggest-highlight": "^3.3.4",
-    "axios": "^1.5.1",
+    "axios": "^1.6.0",
     "content-range": "^2.0.2",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.10",
